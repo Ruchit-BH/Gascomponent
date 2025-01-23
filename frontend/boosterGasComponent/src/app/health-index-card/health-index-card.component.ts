@@ -1,6 +1,6 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
 import { ComponentLibraryModule } from '@bh-digitalsolutions/ui-toolkit-angular/dist';
-// import { ComponentLibraryModule } from "@bh-digitalsolutions/ui-toolkit-angular/dist";
+
 
 
 @Component({
@@ -27,7 +27,6 @@ export class HealthIndexCardComponent {
   }
 
   changeHealthIndex(event:any){
-    // console.log("health",event);
 
       if (event.priority === 'High') {
       this.donutPriority = 'High';

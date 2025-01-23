@@ -53,7 +53,6 @@ export class TablularListComponent implements OnInit{
   result: any;
  
   updateDonutChart(data:any) {
-    // console.log("data",data);
     this.donutData = data;
   }
 
@@ -239,18 +238,7 @@ constructor(private service: AppserviceService){
     });
   }
  
-  // getContri(){
-  //   this.service.getContri().subscribe({
-  //     error: (err) => {
-  //     },
-  //     next: (res: any) => {
-  //       this.tableData = {
-  //         data: res,
-  //         length: res.length,
-  //       };
-  //     },
-  //   });
-  // }
+
  
   deleteCases(id: number) {
     const isDelete = confirm("Are you sure you want to delete?");
@@ -262,14 +250,7 @@ constructor(private service: AppserviceService){
           this.result = res;
           this.getAllAndContri();
           this.donutEdit.emit();
-          // this.donutEdit.emit()
-          // if (this.tableAllOrContri === 'contributing') {
-          //   this.getContri();
-          // } else {
-          //   this.getAll();
-          // }
-          // this.getPriorityForDonut();
-          // this.getcontriPriorityForDonut();
+          
         },
       });
     }
@@ -291,11 +272,7 @@ constructor(private service: AppserviceService){
  
   caseAddedOrEditedOrDelete(){
     //case is added, edited or deleted so....
-    // if (this.tableAllOrContri === 'contributing') {
-    //   this.getContri();
-    // } else if (this.tableAllOrContri === 'all') {
-    //   this.getAll();
-    // }
+
     this.resetModal()
     this.donutEdit.emit();
     this.getAllAndContri()

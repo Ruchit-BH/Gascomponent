@@ -16,7 +16,7 @@ import { TablularListComponent } from '../tablular-list/tablular-list.component'
 })
 export class DonutChartCardsComponent implements OnInit,OnChanges {
 
-  // service: any;
+
   prioritydata: any;
   priorityContridata: any;
   donutCasename: any;
@@ -62,7 +62,7 @@ export class DonutChartCardsComponent implements OnInit,OnChanges {
   }
 
   changeInsightsDonutData(event: any) {
-    // console.log("event",event);
+  
     this.donutCasename = event.casename;
     this.donutOpendate = event.opendate;
     this.donutStatus = event.status;
@@ -128,7 +128,7 @@ export class DonutChartCardsComponent implements OnInit,OnChanges {
           }
         });
         this.dataTotal = { ...this.dataTotal };
-        // this.dataTotal.datasets[0].data = this.prioritydata.map(Number)
+       
         this.dataTotal.labels[0] = this.donutLegendSpanRemoverPriority(
           this.defaultDonutPriority[0],
           this.dataTotal.datasets[0].data[0] || 0
@@ -161,7 +161,7 @@ export class DonutChartCardsComponent implements OnInit,OnChanges {
             this.dataContri.datasets[0].data[2] = Number(value.contributing_count);
           }
         });
-        // this.dataContri.datasets[0].data = this.priorityContridata.map(Number);
+        
         this.dataContri.labels[0] = this.donutLegendSpanRemoverPriority(
           this.defaultDonutPriority[0],
           this.dataContri.datasets[0].data[0] || 0

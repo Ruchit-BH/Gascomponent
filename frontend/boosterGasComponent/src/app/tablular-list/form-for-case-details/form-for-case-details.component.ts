@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter, OnChanges, ChangeDetectorRef } from '@angular/core';
 import { ComponentLibraryModule } from '@bh-digitalsolutions/ui-toolkit-angular/dist';
-// import { ComponentLibraryModule } from "@bh-digitalsolutions/ui-toolkit-angular/dist";
+
 import { FormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
 import moment from 'moment';
@@ -55,7 +55,6 @@ export class FormForCaseDetailsComponent implements OnChanges {
   inputCases: any = {};
  
   @Input() idForEdit: any = [];
-  // @Input() isEdit!: boolean
   @Input() valuesToBeEnteredInFormForEdit: any = {}
   @Input() isOpen!: boolean //this is a property that can take input from the parent, tabular list
   //to send data to the parent, the data is send using @Output
@@ -219,7 +218,7 @@ export class FormForCaseDetailsComponent implements OnChanges {
  
   saveForm(){ 
     this.resetDate = false;
-    // this.resetForm();
+  
 
     this.inputCases = {
       casename: this.casename,
@@ -252,15 +251,14 @@ export class FormForCaseDetailsComponent implements OnChanges {
     }
     else {
       console.log(">>>>>>>>>",this.inputCases);
-      // this.sortTableBasedOnUpdatedData(this.inputCases, this.casename);
+      
       this.updateCases(this.idForEdit[0].casenumber, this.inputCases);
      
       alert("Case Updated")
       this.isOpen = false;
       this.resetForm();
       this.caseAddedOrEditedOrDelete.emit()
-      // this.getPriorityForDonut();
-      // this.getcontriPriorityForDonut();
+
     }
   }
  
@@ -290,7 +288,7 @@ export class FormForCaseDetailsComponent implements OnChanges {
       this.o2 = this.valuesToBeEnteredInFormForEdit.o2;
       this.n2 = this.valuesToBeEnteredInFormForEdit.n2;
       this.editContributing = this.valuesToBeEnteredInFormForEdit.editContributing;
-      // this.validateForm();
+
     }
 
  
@@ -314,8 +312,7 @@ export class FormForCaseDetailsComponent implements OnChanges {
       !this.errorN2 &&
       !this.errorO2 &&
       !this.errorCasename
-      // ||
-      // this.contributingCase
+ 
     ) {
       this.modalCtas = [
         { type: 'secondary', label: 'Reset', key: 'sb--modal-cta--secondary' },
